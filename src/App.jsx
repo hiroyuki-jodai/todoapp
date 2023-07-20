@@ -1,25 +1,19 @@
 import logo from './logo.svg';
 import styles from './App.module.css';
+import {List} from "./components/Layouts/List";
+import {Box, Test} from "./components/Layouts/Box";
+import {createSignal} from "solid-js";
+import {Container, HopeProvider, Text} from "@hope-ui/solid";
+import {TodoList} from "./components/Templates/TodoList";
 
 function App() {
-  return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <HopeProvider>
+            <Container alignContent={"center"} justifyContent={"center"} px={10} py={10} backgroundColor={"#1ABC9C"} minHeight={"100vh"}>
+                <TodoList/>
+            </Container>
+        </HopeProvider>
+    );
 }
 
 export default App;
