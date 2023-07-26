@@ -31,7 +31,7 @@ export const TodoList = (): JSXElement => {
     }
     setTodos(current.filter(Boolean))
   }
-  const [showEnded, setShowEnded] = createSignal(false);
+  const [showEnded, setShowEnded] = createSignal(true);
   const switchEnded = (e:any) => {
     if(e.target.checked){
       // 完了済みを表示
@@ -47,7 +47,7 @@ export const TodoList = (): JSXElement => {
   return (
     <>
       <Box backgroundColor={"#FFF"} margin={"8px 0"} padding={"4px"} borderRadius={"10px"} display={"inline-block"}>
-        <Switch fontWeight={"bold"} onChange={switchEnded}>完了を表示</Switch>
+        <Switch fontWeight={"bold"} onChange={switchEnded} defaultChecked>完了を表示</Switch>
       </Box>
       <section
         // @ts-ignore
