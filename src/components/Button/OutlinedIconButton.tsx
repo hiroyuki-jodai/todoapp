@@ -2,7 +2,7 @@ import {IconButton} from "@hope-ui/solid";
 import {JSXElement} from "solid-js";
 
 type Props = {
-  onClick: () => void
+  onClick: (e:any) => void
   icon: JSXElement;
 }
 export const OutlinedIconButton = ({onClick,icon}:Props) => {

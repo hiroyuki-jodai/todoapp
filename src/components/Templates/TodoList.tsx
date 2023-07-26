@@ -24,6 +24,7 @@ export const TodoList = (): JSXElement => {
   }
   const saveTodo = (todo:Todo,key:number) => {
     const current = todos();
+
     current[key] = todo;
     if(todo.delFlg === true){
       delete current[key]
@@ -37,8 +38,8 @@ export const TodoList = (): JSXElement => {
       setShowEnded(true);
       return;
     }
-    setShowEnded(false);
     // 完了済みを非表示
+    setShowEnded(false);
   }
   const handleDndEvent = (e:any) => {
     setTodos(e.detail.items)

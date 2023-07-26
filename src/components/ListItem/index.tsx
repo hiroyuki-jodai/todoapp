@@ -3,26 +3,15 @@ import {
   Center,
   Checkbox,
   Flex,
-  Grid,
-  GridItem,
   HStack,
-  IconButton,
   Input,
   Text,
   Textarea,
-  VStack
 } from "@hope-ui/solid";
-import {createSignal, JSXElement} from "solid-js";
 import {Todo} from "../../types/todos";
 import {CgCheck} from "solid-icons/cg";
-import {FiEdit} from "solid-icons/fi";
 import {OutlinedIconButton} from "../Button/OutlinedIconButton";
 import {AiOutlineDelete} from "solid-icons/ai";
-import {BiSolidArrowFromBottom, BiSolidDownArrow} from "solid-icons/bi";
-import {FaSolidEllipsisVertical} from "solid-icons/fa";
-import {DatePicker} from "@melodev/solid-datepicker";
-import {DateTimePicker} from "date-time-picker-solid";
-import dayjs from "dayjs";
 
 export const ListItem = ({todo, setTodo}: { todo: Todo; setTodo: (todo: Todo) => void }) => {
   return (
@@ -96,7 +85,7 @@ const Fixed = ({todo, setTodo}: itemProps) => {
         <Box flex={1}><Text fontSize={"16px"} margin={"6px 4px"} fontWeight={"bold"}>{todo.label}</Text></Box>
         <Center>
           <HStack>
-            <OutlinedIconButton icon={<AiOutlineDelete size={25}/>} onClick={() => deleteItem()}/>
+            <OutlinedIconButton icon={<AiOutlineDelete size={25}/>} onClick={(e:any) => {e.stopPropagation();deleteItem()}}/>
           </HStack>
         </Center>
       </Flex>

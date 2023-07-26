@@ -1,8 +1,3 @@
-import logo from './logo.svg';
-import styles from './App.module.css';
-import {List} from "./components/Layouts/List";
-import {Box, Test} from "./components/Layouts/Box";
-import {createSignal} from "solid-js";
 import {Container, HopeProvider, Text} from "@hope-ui/solid";
 import {TodoList} from "./components/Templates/TodoList";
 
