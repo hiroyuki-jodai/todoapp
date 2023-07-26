@@ -1,11 +1,11 @@
 import {Dayjs} from "dayjs";
 
 export type Todo = {
+  id: number;
   status: boolean;
   editable:boolean;
   label: string;
   description: string | undefined;
-  deadLine?: Dayjs;
   created: Dayjs;
   updated: Dayjs;
   delFlg?:boolean
